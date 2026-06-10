@@ -6,12 +6,12 @@ Learning LangGraph by building progressively complex agent graphs.
 
 | Notebook | Concept |
 |---|---|
-| `Hello_world.ipynb` | Single node graph, basic state |
-| `Multiple_Inputs.ipynb` | State with multiple field types (List, str) |
-| `Sequential_Agent.ipynb` | Chaining nodes with edges |
-| `three_nodes_Agent.ipynb` | 3-node sequential pipeline |
-| `Conditional_Agent.ipynb` | Conditional edges, routing logic |
-| `conditional_edges_2.ipynb` | Two independent conditional branches in one graph |
+| [Hello_world.ipynb](Hello_world.ipynb) | Single node graph, basic state |
+| [Multiple_Inputs.ipynb](Multiple_Inputs.ipynb) | State with multiple field types (List, str) |
+| [Sequential_Agent.ipynb](Sequential_Agent.ipynb) | Chaining nodes with edges |
+| [three_nodes_Agent.ipynb](three_nodes_Agent.ipynb) | 3-node sequential pipeline |
+| [Conditional_Agent.ipynb](Conditional_Agent.ipynb) | Conditional edges, routing logic |
+| [conditional_edges_2.ipynb](conditional_edges_2.ipynb) | Two independent conditional branches in one graph |
 
 ## Concepts Covered
 
