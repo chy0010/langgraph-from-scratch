@@ -17,9 +17,6 @@ Hello World
 Multiple Inputs
     │  state with mixed types (List, str, int)
     ▼
-Sequential Agent
-    │  chaining 2 nodes with add_edge
-    ▼
 Three Node Agent
     │  3-stage pipeline, state built up across nodes
     ▼
@@ -53,15 +50,14 @@ ReAct Agent
 |---|------|----------------|
 | 1 | [Hello_world.ipynb](Hello_world.ipynb) | Single node graph, basic state flow |
 | 2 | [Multiple_Inputs.ipynb](Multiple_Inputs.ipynb) | State holding multiple field types |
-| 3 | [Sequential_Agent.ipynb](Sequential_Agent.ipynb) | Two nodes chained sequentially |
-| 4 | [three_nodes_Agent.ipynb](three_nodes_Agent.ipynb) | 3-node pipeline, result built across nodes |
-| 5 | [Conditional_Agent.ipynb](Conditional_Agent.ipynb) | Router node + conditional branching |
-| 6 | [conditional_edges_2.ipynb](conditional_edges_2.ipynb) | Two conditional stages in a single graph |
-| 7 | [looping.ipynb](looping.ipynb) | Conditional edge that loops back into the same node |
-| 8 | [Guessing_game.ipynb](Guessing_game.ipynb) | Number-guessing game with bounds-narrowing strategy |
-| 9 | [Agent_Bot.py](Agent_Bot.py) | First LLM-backed node — single-turn chat via OpenAI |
-| 10 | [Memory_Agent.py](Memory_Agent.py) | Multi-turn chat with persisted history + conversation logging |
-| 11 | [ReAct.py](ReAct.py) | ReAct agent — model calls tools (add/subtract/multiply) and loops until done |
+| 3 | [three_nodes_Agent.ipynb](three_nodes_Agent.ipynb) | 3-node pipeline, result built across nodes |
+| 4 | [Conditional_Agent.ipynb](Conditional_Agent.ipynb) | Router node + conditional branching |
+| 5 | [conditional_edges_2.ipynb](conditional_edges_2.ipynb) | Two conditional stages in a single graph |
+| 6 | [looping.ipynb](looping.ipynb) | Conditional edge that loops back into the same node |
+| 7 | [Guessing_game.ipynb](Guessing_game.ipynb) | Number-guessing game with bounds-narrowing strategy |
+| 8 | [Agent_Bot.py](Agent_Bot.py) | First LLM-backed node — single-turn chat via OpenAI |
+| 9 | [Memory_Agent.py](Memory_Agent.py) | Multi-turn chat with persisted history + conversation logging |
+| 10 | [ReAct.py](ReAct.py) | ReAct agent — model calls tools (add/subtract/multiply) and loops until done |
 
 ---
 
