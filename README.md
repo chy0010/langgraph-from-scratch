@@ -40,6 +40,12 @@ Memory Agent
     ▼
 ReAct Agent
     │  tool-calling loop: model decides when to call tools, when to stop
+    ▼
+Drafter
+    │  document drafting agent with update/save tools and state tracking
+    ▼
+RAG Agent
+    │  retrieval-augmented generation — PDF loaded into ChromaDB, queried via tool
 ```
 
 ---
@@ -58,6 +64,8 @@ ReAct Agent
 | 8 | [Agent_Bot.py](Agent_Bot.py) | First LLM-backed node — single-turn chat via OpenAI |
 | 9 | [Memory_Agent.py](Memory_Agent.py) | Multi-turn chat with persisted history + conversation logging |
 | 10 | [ReAct.py](ReAct.py) | ReAct agent — model calls tools (add/subtract/multiply) and loops until done |
+| 11 | [Drafter.py](Drafter.py) | Document drafting agent — LLM updates and saves documents via tools |
+| 12 | [RAG_Agent.py](RAG_Agent.py) | RAG agent — PDF embedded into ChromaDB, retrieved via tool on every query |
 
 ---
 

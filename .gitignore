@@ -1,6 +1,6 @@
 .env
 venv/
-logging.txt
+*.txt
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
