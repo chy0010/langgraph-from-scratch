@@ -1,3 +1,61 @@
+# ─────────────────────────────────────────────────────────────
+#
+#   RAG AGENT FLOW
+#
+#   user question
+#        │
+#        ▼
+#   [ AgentState ]
+#   messages: Annotated[Sequence[BaseMessage], add_messages]
+#        │
+#        ▼
+#   set_entry_point
+#        │
+#        ▼
+#   ┌──────────────────────┐
+#   │         llm          │  ← call_llm()
+#   │                      │
+#   │  SystemMessage +     │
+#   │  state["messages"]   │
+#   │         │            │
+#   │         ▼            │
+#   │   GPT-4o bound       │
+#   │   to retriever_tool  │
+#   └──────────┬───────────┘
+#              │
+#       should_continue()
+#       checks last_message.tool_calls
+#              │
+#     ┌────────┴──────────┐
+#     │                   │
+#   True                False
+#     │                   │
+#     ▼                   ▼
+# ┌───────────────┐      END
+# │ retriever_    │
+# │ agent         │  ← take_action()
+# │               │
+# │ runs          │
+# │ retriever_    │
+# │ tool(query)   │
+# │               │
+# │ searches      │
+# │ ChromaDB      │
+# │ returns top   │
+# │ 5 chunks      │
+# │               │
+# │ appends       │
+# │ ToolMessage   │
+# └──────┬────────┘
+#        │
+#        │  add_edge("retriever_agent", "llm")
+#        ▼
+#   back to llm  ← loops until no more tool_calls
+#
+#   Final state: [Human, AI(tool_call), Tool(chunks), AI(answer)]
+#
+# ─────────────────────────────────────────────────────────────
+
 from dotenv import load_dotenv
 import os
 from langgraph.graph import StateGraph, END
