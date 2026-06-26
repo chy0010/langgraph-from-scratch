@@ -1,8 +1,8 @@
 # LangGraph From Scratch
 
-![Python](https://img.shields.io/badge/Python-3.11-blue?style=flat-square&logo=python)
-![LangGraph](https://img.shields.io/badge/LangGraph-1.2.4-purple?style=flat-square)
-![Status](https://img.shields.io/badge/Status-In%20Progress-green?style=flat-square)
+![Python](https://img.shields.io/badge/Python-3.12-blue?style=flat-square&logo=python)
+![LangGraph](https://img.shields.io/badge/LangGraph-1.2.5-purple?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=flat-square)
 
 > Building LangGraph agent graphs from the ground up — one concept at a time.
 
@@ -16,6 +16,9 @@ Hello World
     ▼
 Multiple Inputs
     │  state with mixed types (List, str, int)
+    ▼
+Sum Multiply
+    │  single node with conditional logic inside — add or multiply based on state
     ▼
 Three Node Agent
     │  3-stage pipeline, state built up across nodes
@@ -56,16 +59,17 @@ RAG Agent
 |---|------|----------------|
 | 1 | [Hello_world.ipynb](Hello_world.ipynb) | Single node graph, basic state flow |
 | 2 | [Multiple_Inputs.ipynb](Multiple_Inputs.ipynb) | State holding multiple field types |
-| 3 | [three_nodes_Agent.ipynb](three_nodes_Agent.ipynb) | 3-node pipeline, result built across nodes |
-| 4 | [Conditional_Agent.ipynb](Conditional_Agent.ipynb) | Router node + conditional branching |
-| 5 | [conditional_edges_2.ipynb](conditional_edges_2.ipynb) | Two conditional stages in a single graph |
-| 6 | [looping.ipynb](looping.ipynb) | Conditional edge that loops back into the same node |
-| 7 | [Guessing_game.ipynb](Guessing_game.ipynb) | Number-guessing game with bounds-narrowing strategy |
-| 8 | [Agent_Bot.py](Agent_Bot.py) | First LLM-backed node — single-turn chat via OpenAI |
-| 9 | [Memory_Agent.py](Memory_Agent.py) | Multi-turn chat with persisted history + conversation logging |
-| 10 | [ReAct.py](ReAct.py) | ReAct agent — model calls tools (add/subtract/multiply) and loops until done |
-| 11 | [Drafter.py](Drafter.py) | Document drafting agent — LLM updates and saves documents via tools |
-| 12 | [RAG_Agent.py](RAG_Agent.py) | RAG agent — PDF embedded into ChromaDB, retrieved via tool on every query |
+| 3 | [sum_multiply.ipynb](sum_multiply.ipynb) | Single node with conditional logic — add or multiply based on state |
+| 4 | [three_nodes_Agent.ipynb](three_nodes_Agent.ipynb) | 3-node pipeline, result built across nodes |
+| 5 | [Conditional_Agent.ipynb](Conditional_Agent.ipynb) | Router node + conditional branching |
+| 6 | [conditional_edges_2.ipynb](conditional_edges_2.ipynb) | Two conditional stages in a single graph |
+| 7 | [looping.ipynb](looping.ipynb) | Conditional edge that loops back into the same node |
+| 8 | [Guessing_game.ipynb](Guessing_game.ipynb) | Number-guessing game with bounds-narrowing strategy |
+| 9 | [Agent_Bot.py](Agent_Bot.py) | First LLM-backed node — single-turn chat via OpenAI |
+| 10 | [Memory_Agent.py](Memory_Agent.py) | Multi-turn chat with persisted history + conversation logging |
+| 11 | [ReAct.py](ReAct.py) | ReAct agent — model calls tools (add/subtract/multiply) and loops until done |
+| 12 | [Drafter.py](Drafter.py) | Document drafting agent — LLM updates and saves documents via tools |
+| 13 | [RAG_Agent.py](RAG_Agent.py) | RAG agent — PDF embedded into ChromaDB, retrieved via tool on every query |
 
 ---
 
@@ -81,6 +85,7 @@ RAG Agent
 | LLM-backed nodes | A node's job is just calling `model.invoke(...)` and returning the result |
 | `add_messages` reducer | Appends new messages to state instead of overwriting them |
 | `ToolNode` + `bind_tools` | Lets the model call Python functions and feed results back into the loop |
+| RAG pattern | Embed documents into a vector store, retrieve relevant chunks via a tool at query time |
 
 ---
 
